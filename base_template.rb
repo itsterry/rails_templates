@@ -6,7 +6,6 @@ gem 'mislav-will_paginate', :lib=>'will_paginate',:source=>'http://gems.github.c
 rake 'gems:install'
 
 plugin :make_resourceful, :svn=>'http://svn.hamptoncatlin.com/make_resourceful/tags/make_resourceful'
-plugin :exception_notification
 plugin "state_machine", :git=>"git://github.com/pluginaweek/state_machine.git"
 plugin "rspec", :git=>"git://github.com/dchelimsky/rspec.git"
 plugin "rspec-rails", :git=>"git://github.com/dchelimsky/rspec-rails.git"
