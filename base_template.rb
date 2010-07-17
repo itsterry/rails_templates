@@ -34,9 +34,14 @@ generate :rspec
 #route "map.resources :users"
 #route "map.resources :sessions"
 
+generate :rspec_model, "user firstname:string"
 
 generate :rspec_controller, "home index"
 route "map.root :controller=>'home'"
+route "map.home :controller=>'home'"
+route "map.signin '/signin', :controller=>'signin'"
+route "map.signin '/signout', :controller=>'signin', :action=>'signout"
+route "map.signin '/signin', :controller=>'signin', :action=>'forgot"
 
 git :init
 
