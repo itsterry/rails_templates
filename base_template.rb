@@ -64,5 +64,5 @@ git :rm=>"public/index.html"
 git :add => '.'
 git :commit =>"-m 'initial commit'"
 
-run 'git submodule add git@github.com:itsterry/rails_libraries.git lib'
+run 'git submodule add git@github.com:itsterry/rails_libraries.git lib/rails_libraries'
 
