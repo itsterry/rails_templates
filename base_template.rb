@@ -15,14 +15,14 @@ gem 'calendar_date_select'
 gem 'formtastic_calendar_date_select', :source=>"http://gemcutter.org"
 rake 'gems:install'
 
+plugin "formtastic_calendar_date_select", :git=>"git://github.com/dyohi/formtastic_calendar_date_select"
+plugin 'exception_notifier', :git => 'git://github.com/rails/exception_notification.git'
+plugin :attachment_fu, :git=>'git://github.com/technoweenie/attachment_fu.git'
 plugin :make_resourceful, :svn=>'http://svn.hamptoncatlin.com/make_resourceful/tags/make_resourceful'
 plugin "state_machine", :git=>"git://github.com/pluginaweek/state_machine.git"
 plugin "rspec", :git=>"git://github.com/dchelimsky/rspec.git"
 plugin "rspec-rails", :git=>"git://github.com/dchelimsky/rspec-rails.git"
 plugin :mimetype_fu, :svn=>"http://mimetype-fu.googlecode.com/svn/trunk/"
-plugin :formtastic_calendar_date_select, :git=>"git://github.com/dyohi/formtastic_calendar_date_select"
-plugin :exception_notification
-plugin :attachment_fu, :git=>'git://github.com/technoweenie/attachment_fu.git'
 generate :rspec
 
 #plugin :restful_authentication, :svn=>'http://svn.techno-weenie.net/projects/plugins/restful_authentication'
