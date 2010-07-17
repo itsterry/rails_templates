@@ -54,6 +54,11 @@ git :init
 
 run 'git submodule add git@github.com:itsterry/rails_libraries.git lib/rails_libraries'
 
+['spec/spec_helper.rb'].each do |f|
+  run 'rm -f '+f
+  run 'cp lib/rails_libraries/blank_files/'+f+' '+f
+end
+
 file ".gitignore", <<END
 .DS_Store
 log/*.log
