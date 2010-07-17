@@ -34,11 +34,14 @@ generate :rspec
 #route "map.resources :users"
 #route "map.resources :sessions"
 
-generate :rspec_model, "right controller:string action:string admin:integer fundamental:integer god:integer [controller,action]:index"
+generate :rspec_model, "right controller:string action:string admin:integer fundamental:integer god:integer "
 generate :rspec_model, "role title:string parent_id:integer admin:integer god:integer parent_id:index admin:index god:index"
 generate :rspec_model, "user firstname:string lastname:string email:string password_hash:string password_salt:string current_login:datetime last_login:datetime email:index"
 generate :migration, "create_rights_roles"
 generate :migration, "create_roles_users"
+generate :migration, "add_index_to_rights"
+
+#right [controller,action]:index
 
 
 
@@ -54,7 +57,18 @@ git :init
 
 run 'git submodule add git@github.com:itsterry/rails_libraries.git lib/rails_libraries'
 
-['spec/spec_helper.rb'].each do |f|
+[
+  'spec/spec_helper.rb',
+  'spec/fixtures/rights.yml',
+  'spec/fixtures/roles.yml',
+  'spec/fixtures/users.yml',
+  'spec/models/right_spec.rb',
+  'spec/models/role_spec.rb',
+  'spec/models/user_spec.rb',
+  'models/right.rb',
+  'models/role.rb',
+  'models/user.rb'
+].each do |f|
   run 'rm -f '+f
   run 'cp lib/rails_libraries/blank_files/'+f+' '+f
 end
