@@ -52,6 +52,8 @@ route "map.signin '/signin', :controller=>'signin', :action=>'forgot'"
 
 git :init
 
+run 'git submodule add git@github.com:itsterry/rails_libraries.git lib/rails_libraries'
+
 file ".gitignore", <<END
 .DS_Store
 log/*.log
@@ -64,5 +66,4 @@ git :rm=>"public/index.html"
 git :add => '.'
 git :commit =>"-m 'initial commit'"
 
-run 'git submodule add git@github.com:itsterry/rails_libraries.git lib/rails_libraries'
 
