@@ -34,14 +34,21 @@ generate :rspec
 #route "map.resources :users"
 #route "map.resources :sessions"
 
-generate :rspec_model, "user firstname:string"
+generate :rspec_model, "right controller:string action:string admin:integer fundamental:integer god:integer [controller,action]:index"
+generate :rspec_model, "role title:string parent_id:integer admin:integer god:integer parent_id:index admin:index god:index"
+generate :rspec_model, "user firstname:string lastname:string email:string password_hash:string password_salt:string current_login:datetime last_login:datetime email:index"
+generate :migration, "create_rights_roles"
+generate :migration, "create_roles_users"
 
-generate :rspec_controller, "home index"
+
+
+generate :rspec_controller, "home"
+generate :rspec_controller, "signin"
 route "map.root :controller=>'home'"
-route "map.home :controller=>'home'"
+route "map.home '/', :controller=>'home'"
 route "map.signin '/signin', :controller=>'signin'"
-route "map.signin '/signout', :controller=>'signin', :action=>'signout"
-route "map.signin '/signin', :controller=>'signin', :action=>'forgot"
+route "map.signin '/signout', :controller=>'signin', :action=>'signout'"
+route "map.signin '/signin', :controller=>'signin', :action=>'forgot'"
 
 git :init
 
@@ -56,4 +63,6 @@ git :rm=>"public/index.html"
 
 git :add => '.'
 git :commit =>"-m 'initial commit'"
+
+git :add => 'submodule git@github.com:itsterry/rails_libraries.git lib'
 
